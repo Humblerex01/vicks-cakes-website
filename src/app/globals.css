@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@theme {
+  --color-chocolate: #7B3F00;
+  --color-caramel: #F7C59F;
+  --color-cream: #FFF8F2;
+  --color-cocoa: #3E2723;
+  --color-gold: #FFD580;
+
+  --font-playfair: "Playfair Display", serif;
+  --font-poppins: "Poppins", sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@400;500&display=swap');
+
+body {
+  @apply bg-cream text-cocoa font-poppins;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-playfair);
+  color: var(--color-cocoa);
+}
+
+* {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+.btn-primary {
+  @apply bg-chocolate text-cream px-6 py-3 rounded-full shadow-lg hover:bg-[#A8684F];
+}
