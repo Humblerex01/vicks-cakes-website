@@ -6,7 +6,8 @@ import Footer from "../components/Footer";
 import BackToTop from "../components/BackToTop";
 
 export default function Menu() {
-  const whatsappNumber = "09155705762"; // Replace with the baker’s WhatsApp number
+  // ✅ Use international format without "+" or leading zero
+  const whatsappNumber = "2349155705762"; // corresponds to 09155705762
 
   const products = [
     {
@@ -86,9 +87,10 @@ export default function Menu() {
 },
 ];
 
+
   const handleOrder = (productName: string) => {
-    const text = `Hello Vick’s Cakes! I’d like to order your ${productName}.`;
-    const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
+    const message = `Hello Vick’s Cakes & Pastries! 🍰\nI’d like to order your *${productName}*.\n\nIs it available right now?`;
+    const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappLink, "_blank");
   };
 

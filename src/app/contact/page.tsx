@@ -8,11 +8,18 @@ export default function Contact() {
   const [message, setMessage] = useState("");
   const [name, setName] = useState("");
 
-  const whatsappNumber = "09155705762"; // Replace with baker’s WhatsApp number (e.g. 2348134567890)
-  const handleSubmit = (e: { preventDefault: () => void; }) => {
+  // ✅ Use international format (without + or leading 0)
+  const whatsappNumber = "2349155705762"; // for 09155705762
+
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const text = `Hello Vick’s Cakes! My name is ${name}. ${message}`;
-    const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
+
+    // Properly formatted message text
+    const text = `Hello Vick’s Cakes & Pastries! 🍰%0AMy name is ${name}.%0A%0A${message}`;
+    const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+      `Hello Vick’s Cakes & Pastries! 🍰\nMy name is ${name}.\n\n${message}`
+    )}`;
+
     window.open(whatsappLink, "_blank");
   };
 
